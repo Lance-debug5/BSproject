@@ -15,6 +15,7 @@
             margin: 0;
             padding: 0;
             line-height: 1.6;
+            overflow-x: hidden;
             
             /* 11. Custom Cursor Effect */
             cursor: crosshair; 
@@ -70,26 +71,6 @@
             font-size: 1.5rem;
         }
 
-        /* 6. Picture / Graphic Showcase Elements */
-        .showcase-image {
-            width: 100%;
-            max-height: 400px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-top: 15px;
-            border: 2px solid #3c3f4a;
-            /* 10. Special Effect - Smooth transition for hover */
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-        }
-
-        /* 10. Special Effects (Mouse rollover effect on your Canva graphic) */
-        .showcase-image:hover {
-            transform: scale(1.01);
-            box-shadow: 0 8px 25px rgba(181, 23, 158, 0.4);
-            border-color: #b5179e; /* Glows purple on mouseover */
-            cursor: pointer;
-        }
-
         /* 10. Special Effects (Mouse rollover effect on links) */
         .nav-link {
             color: #ffffff; 
@@ -120,6 +101,20 @@
         .footer-links {
             margin-bottom: 15px;
         }
+
+        /* Styling for the JavaScript Custom Mouse Trail particles */
+        .trail-particle {
+            position: fixed;
+            width: 8px;
+            height: 8px;
+            background-color: #b5179e; /* Purple dots matching your theme */
+            border-radius: 50%;
+            pointer-events: none; /* Stops the particles from blocking clicks */
+            transform: translate(-50%, -50%);
+            transition: transform 0.5s linear, opacity 0.5s linear;
+            z-index: 9999;
+            box-shadow: 0 0 8px #9d4edd;
+        }
     </style>
 </head>
 <body>
@@ -132,6 +127,7 @@
             <h1>Lance Co.</h1>
         </header>
 
+        <!-- 3. Welcome / Intro Section -->
         <section id="welcome">
             <h2>Welcome</h2>
             <p>Welcome to my website, Lance Co.com. This is the place where I'll build my website and you'll get to know me.</p>
@@ -140,20 +136,13 @@
         <!-- 5. Short Bio Section -->
         <section id="bio">
             <h2>A lil about me</h2>
-            <p>My real name is Shane, but I also  to go by lance either works, I'm a Computer Infomation Systems major, this is my second to last semester and thinking about if I want to pursure something higher once I graduate .</p>
+            <p>My real name is Shane, but I also like to go by lance either works, I'm a Computer Information Systems major, this is my second to last semester and thinking about if I want to pursue something higher once I graduate.</p>
         </section>
 
-         <section id="welcome">
-            <h2>Goalw</h2>
-            <p>Im aiming to further my programming and web development skills and learn more about programs and languages like JavaScrippt or linux</p>
-        </section>
-        
-        <!-- 6. Graphic Showcase Section -->
-        <section id="gallery">
-            <h2>Featured Banner Graphic</h2>
-            <p>Below is our custom Canva branding asset built explicitly to match this core dark aesthetic pipeline:</p>
-            <!-- 6. Picture/Graphic Canvas Asset (Ensure you name your Canva file graphic.jpg when uploading) -->
-            <img src="graphic.jpg" alt="LanceCo Custom Banner Graphic" class="showcase-image">
+        <!-- Goals Section -->
+        <section id="goals">
+            <h2>Goals</h2>
+            <p>I'm aiming to further my programming and web development skills and learn more about programs and languages like JavaScript or Linux.</p>
         </section>
 
         <!-- 7 & 8. Footer Structure -->
@@ -162,13 +151,34 @@
             <div class="footer-links">
                 <a href="https://github.com" target="_blank" class="nav-link">GitHub</a>
                 <a href="#welcome" class="nav-link">Top of Page</a>
-                <!-- Replace your-email@example.com with your actual email address below -->
-                <a href="mailto:your-Shane.Rawlins14@login.cuny.edu" class="nav-link">Contact Email</a>
+                <a href="mailto:Shane.Rawlins14@login.cuny.edu" class="nav-link">Contact Email</a>
             </div>
             <!-- 7. Copyright Symbol and Required Year 2012 -->
             <p>&copy; 2012 Lance Co. All Rights Reserved.</p>
         </footer>
     </div>
+
+    <!-- JavaScript code handling the custom interactive mouse trail -->
+    <script>
+        document.addEventListener('mousemove', function(e) {
+            const particle = document.createElement('div');
+            particle.className = 'trail-particle';
+            
+            particle.style.left = e.clientX + 'px';
+            particle.style.top = e.clientY + 'px';
+            
+            document.body.appendChild(particle);
+            
+            setTimeout(() => {
+                particle.style.transform = 'translate(-50%, -50%) scale(0)';
+                particle.style.opacity = '0';
+            }, 10);
+            
+            setTimeout(() => {
+                particle.remove();
+            }, 500);
+        });
+    </script>
 
 </body>
 </html>
