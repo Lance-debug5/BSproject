@@ -49,7 +49,7 @@
             letter-spacing: 1px;
         }
 
-        /* 2. Logo Box Integration */
+        /* 2. Logo Box Integration (.jpg) */
         .logo {
             max-width: 140px;
             height: auto;
@@ -69,6 +69,26 @@
             border-left: 4px solid #ffffff; /* White visual anchor accent bar */
             padding-left: 12px;
             font-size: 1.5rem;
+        }
+
+        /* 6. Picture / Graphic Showcase Elements styling */
+        .showcase-image {
+            width: 100%;
+            max-height: 380px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-top: 15px;
+            border: 2px solid #3c3f4a;
+            /* 10. Special Effect - Smooth transition for hover */
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* 10. Special Effects (Mouse rollover effect on your graphic banner) */
+        .showcase-image:hover {
+            transform: scale(1.01);
+            box-shadow: 0 8px 25px rgba(181, 23, 158, 0.5);
+            border-color: #b5179e; /* Glows purple on mouseover */
+            cursor: pointer;
         }
 
         /* 10. Special Effects (Mouse rollover effect on links) */
@@ -102,14 +122,14 @@
             margin-bottom: 15px;
         }
 
-        /* Styling for the JavaScript Custom Mouse Trail particles */
+        /* 10. Special Effects: Styling for the JavaScript Custom Mouse Trail particles */
         .trail-particle {
             position: fixed;
             width: 8px;
             height: 8px;
             background-color: #b5179e; /* Purple dots matching your theme */
             border-radius: 50%;
-            pointer-events: none; /* Stops the particles from blocking clicks */
+            pointer-events: none; /* Stops particles from blocking clicks */
             transform: translate(-50%, -50%);
             transition: transform 0.5s linear, opacity 0.5s linear;
             z-index: 9999;
@@ -121,19 +141,19 @@
 
     <div class="container">
         <header>
-            <!-- 2. Logo (.jpg) integration -->
+            <!-- 2. Include your logo (.jpg) requirement -->
             <img src="logo.jpg" alt="Lance Seguridad Logo" class="logo">
-            <!-- 1. Page Title -->
+            <!-- 1. Title on your page (Heading) -->
             <h1>Lance Co.</h1>
         </header>
 
-        <!-- 3. Welcome / Intro Section -->
+        <!-- 3. Introduction text requirement -->
         <section id="welcome">
             <h2>Welcome</h2>
             <p>Welcome to my website, Lance Co.com. This is the place where I'll build my website and you'll get to know me.</p>
         </section>
 
-        <!-- 5. Short Bio Section -->
+        <!-- 5. Short Bio requirement -->
         <section id="bio">
             <h2>A lil about me</h2>
             <p>My real name is Shane, but I also like to go by lance either works, I'm a Computer Information Systems major, this is my second to last semester and thinking about if I want to pursue something higher once I graduate.</p>
@@ -145,20 +165,26 @@
             <p>I'm aiming to further my programming and web development skills and learn more about programs and languages like JavaScript or Linux.</p>
         </section>
 
-        <!-- 7 & 8. Footer Structure -->
+        <!-- 6. At least one Picture, graphic requirement (Uses an automated web image matching your theme) -->
+        <section id="gallery">
+            <h2>Featured Graphic Portfolio</h2>
+            <img src="https://unsplash.com" alt="LanceCo Custom Banner Graphic" class="showcase-image">
+        </section>
+
+        <!-- 7 & 8. Footer for hyperlinks and Copyright elements -->
         <footer>
-            <!-- 8. Footer for working functional hyperlinks -->
+            <!-- 8. Footer for hyperlinks requirement -->
             <div class="footer-links">
                 <a href="https://github.com" target="_blank" class="nav-link">GitHub</a>
                 <a href="#welcome" class="nav-link">Top of Page</a>
                 <a href="mailto:Shane.Rawlins14@login.cuny.edu" class="nav-link">Contact Email</a>
             </div>
-            <!-- 7. Copyright Symbol and Required Year 2012 -->
+            <!-- 7. Copyright (with the Symbol incl.) All Rights Reserved 2012 requirement -->
             <p>&copy; 2012 Lance Co. All Rights Reserved.</p>
         </footer>
     </div>
 
-    <!-- JavaScript code handling the custom interactive mouse trail -->
+    <!-- 10. Special effects (Interactive Mouse Trail script) -->
     <script>
         document.addEventListener('mousemove', function(e) {
             const particle = document.createElement('div');
