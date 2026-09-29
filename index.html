@@ -3,93 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio Template</title>
+    <!-- 1. Title on your page (Browser Tab) -->
+    <title>Lance Co. Portfolio</title>
     
     <style>
+        /* 4. Font Styles, Colors, and 9. Background Colors */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #333333;
-            background-color: #f4f6f9;
+            color: #ffffff; /* Crisp white body text matches logo canvas */
+            background-color: #12161a; /* Soft Off-Black Background minimizes white block contrast */
             margin: 0;
             padding: 0;
             line-height: 1.6;
-            cursor: cell; 
+            
+            /* 11. Custom Cursor Effect */
+            cursor: crosshair; 
         }
 
+        /* Layout Container */
         .container {
             max-width: 800px;
             margin: 40px auto;
-            background: #ffffff;
+            background: #1c1e24; /* Subtle charcoal block background */
             padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-radius: 12px;
+            box-shadow: 0 4px 25px rgba(157, 78, 221, 0.2); /* Purple Ambient Glow */
+            border: 1px solid #3c3f4a; 
         }
 
+        /* Header styling */
         header {
             text-align: center;
-            border-bottom: 2px solid #eaeaea;
-            padding-bottom: 20px;
+            border-bottom: 2px solid #9d4edd; /* Rich Purple Divider Line */
+            padding-bottom: 25px;
             margin-bottom: 30px;
         }
 
+        /* 1. Title on your page (Heading) */
         h1 {
-            color: #2c3e50;
-            font-size: 2.5rem;
-            margin-top: 10px;
+            color: #b5179e; /* Vibrant Branding Purple */
+            font-size: 2.6rem;
+            margin-top: 15px;
+            font-weight: 800;
+            letter-spacing: 1px;
         }
 
+        /* 2. Logo Box Integration (Bridges the white image frame seamlessly) */
         .logo {
-            max-width: 120px;
+            max-width: 140px;
             height: auto;
-            border-radius: 50%;
+            border-radius: 8px; /* Slightly softens the square corners */
+            border: 3px solid #ffffff; /* Crisp white frame makes the logo look like a framed badge */
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.1); 
+            background-color: #ffffff;
         }
 
+        /* Section Styling */
         section {
-            margin-bottom: 30px;
+            margin-bottom: 35px;
         }
 
         h2 {
-            color: #34495e;
-            border-left: 4px solid #3498db;
-            padding-left: 10px;
+            color: #9d4edd; /* Electric Purple Subheadings */
+            border-left: 4px solid #ffffff; /* White visual anchor accent bar */
+            padding-left: 12px;
+            font-size: 1.5rem;
         }
 
+        /* 6. Picture / Graphic Showcase Elements */
         .showcase-image {
             width: 100%;
             max-height: 400px;
             object-fit: cover;
-            border-radius: 6px;
+            border-radius: 8px;
             margin-top: 15px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid #3c3f4a;
+            /* 10. Special Effect - Smooth transition for hover */
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
         }
 
+        /* 10. Special Effects (Mouse rollover effect on your Canva graphic) */
         .showcase-image:hover {
-            transform: scale(1.02);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            transform: scale(1.01);
+            box-shadow: 0 8px 25px rgba(181, 23, 158, 0.4);
+            border-color: #b5179e; /* Glows purple on mouseover */
+            cursor: pointer;
         }
 
+        /* 10. Special Effects (Mouse rollover effect on links) */
         .nav-link {
-            color: #3498db;
+            color: #ffffff; /* Matches white theme accent */
             text-decoration: none;
             font-weight: bold;
-            margin: 0 10px;
+            margin: 0 12px;
+            padding-bottom: 4px;
             transition: color 0.2s ease, border-bottom 0.2s ease;
             border-bottom: 2px solid transparent;
         }
 
         .nav-link:hover {
-            color: #2c3e50;
-            border-bottom: 2px solid #2c3e50;
+            color: #b5179e; /* Shifts smoothly to purple */
+            border-bottom: 2px solid #b5179e;
             cursor: pointer;
         }
 
+        /* 7 & 8. Footer Hyperlinks and Copyright elements */
         footer {
             text-align: center;
             margin-top: 50px;
-            padding-top: 20px;
-            border-top: 2px solid #eaeaea;
+            padding-top: 25px;
+            border-top: 2px solid #3c3f4a;
             font-size: 0.9rem;
-            color: #7f8c8d;
+            color: #a0a5b5;
         }
 
         .footer-links {
@@ -101,35 +126,42 @@
 
     <div class="container">
         <header>
-            <!-- Replace logo.jpg with your own logo file later -->
-            <img src="logo.jpg" alt="My Profile Logo" class="logo">
-            <h1>Welcome to My Template</h1>
+            <!-- 2. Logo (.jpg) integration with clean white mounting frame -->
+            <img src="logo.jpg" alt="Lance Seguridad Logo" class="logo">
+            <!-- 1. Page Title -->
+            <h1>Lance Co. Space</h1>
         </header>
 
+        <!-- 3. Introduction Text -->
         <section id="intro">
             <h2>Introduction</h2>
-            <p>Welcome to my custom-built GitHub single-page template. This page highlights my core skill sets, foundational layout practices, and interactive design elements using modern web configurations.</p>
+            <p>Welcome to the official digital portal for Lance Co. This single-page configuration details custom user experience environments, interactive CSS structures, and frontend layouts deployed directly through secondary server repositories.</p>
         </section>
 
+        <!-- 5. Short Bio -->
         <section id="bio">
             <h2>Short Bio</h2>
-            <p>Write a short description about yourself here. Include your background, interest in web design, or professional goals.</p>
+            <p>Focusing on integrated systems and secure web designs. This space serves as an exploratory canvas combining striking high-contrast purple colorways, balanced grid systems, and structural styling mechanics.</p>
         </section>
 
+        <!-- 6. Graphic Showcase Section -->
         <section id="gallery">
-            <h2>Featured Graphic</h2>
-            <p>Below is a featured image showcasing a key project design element:</p>
-            <!-- Replace graphic.jpg with your own graphic file later -->
-            <img src="graphic.jpg" alt="Showcase Project Graphic" class="showcase-image">
+            <h2>Featured Canvas Graphic</h2>
+            <p>Below is our custom Canva branding asset built explicitly to match this core dark aesthetic pipeline:</p>
+            <!-- 6. Picture/Graphic Canvas Asset (Your upcoming Canva jpg upload) -->
+            <img src="graphic.jpg" alt="LanceCo Custom Banner Graphic" class="showcase-image">
         </section>
 
+        <!-- 7 & 8. Footer Structure -->
         <footer>
+            <!-- 8. Footer for hyperlinks -->
             <div class="footer-links">
                 <a href="https://github.com" target="_blank" class="nav-link">GitHub</a>
-                <a href="#intro" class="nav-link">Back to Top</a>
-                <a href="https://w3schools.com" target="_blank" class="nav-link">W3Schools</a>
+                <a href="#intro" class="nav-link">Top of Page</a>
+                <a href="https://w3schools.com" target="_blank" class="nav-link">W3Schools Docs</a>
             </div>
-            <p>&copy; 2012 All Rights Reserved.</p>
+            <!-- 7. Copyright Symbol and Required Year 2012 -->
+            <p>&copy; 2012 Lance Co. All Rights Reserved.</p>
         </footer>
     </div>
 
