@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio Template</title>
+    
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333333;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            cursor: cell; 
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-top: 10px;
+        }
+
+        .logo {
+            max-width: 120px;
+            height: auto;
+            border-radius: 50%;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #34495e;
+            border-left: 4px solid #3498db;
+            padding-left: 10px;
+        }
+
+        .showcase-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-top: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .showcase-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+
+        .nav-link {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 10px;
+            transition: color 0.2s ease, border-bottom 0.2s ease;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-link:hover {
+            color: #2c3e50;
+            border-bottom: 2px solid #2c3e50;
+            cursor: pointer;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 2px solid #eaeaea;
+            font-size: 0.9rem;
+            color: #7f8c8d;
+        }
+
+        .footer-links {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <!-- Replace logo.jpg with your own logo file later -->
+            <img src="logo.jpg" alt="My Profile Logo" class="logo">
+            <h1>Welcome to My Template</h1>
+        </header>
+
+        <section id="intro">
+            <h2>Introduction</h2>
+            <p>Welcome to my custom-built GitHub single-page template. This page highlights my core skill sets, foundational layout practices, and interactive design elements using modern web configurations.</p>
+        </section>
+
+        <section id="bio">
+            <h2>Short Bio</h2>
+            <p>Write a short description about yourself here. Include your background, interest in web design, or professional goals.</p>
+        </section>
+
+        <section id="gallery">
+            <h2>Featured Graphic</h2>
+            <p>Below is a featured image showcasing a key project design element:</p>
+            <!-- Replace graphic.jpg with your own graphic file later -->
+            <img src="graphic.jpg" alt="Showcase Project Graphic" class="showcase-image">
+        </section>
+
+        <footer>
+            <div class="footer-links">
+                <a href="https://github.com" target="_blank" class="nav-link">GitHub</a>
+                <a href="#intro" class="nav-link">Back to Top</a>
+                <a href="https://w3schools.com" target="_blank" class="nav-link">W3Schools</a>
+            </div>
+            <p>&copy; 2012 All Rights Reserved.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
