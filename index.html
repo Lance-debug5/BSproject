@@ -11,7 +11,7 @@
 </head>
 <body>
 
-    <!-- Responsive Navigation Menu with Dropdown Functionality (5+ links total) -->
+    <!-- Responsive Navigation Menu with Dropdown Functionality -->
     <nav class="navbar">
         <div class="nav-brand">Lance Co.</div>
         <ul class="nav-menu">
@@ -27,6 +27,8 @@
                 </ul>
             </li>
             <li><a href="#gallery" class="menu-link">Portfolio</a></li>
+            <!-- 🌗 Theme Toggle Controller -->
+            <li><button id="theme-toggle" class="toggle-btn">Toggle Contrast 🌗</button></li>
         </ul>
     </nav>
 
@@ -56,7 +58,7 @@
             <p>I'm aiming to further my programming and web development skills and learn more about programs and languages like JavaScript or Linux.</p>
         </section>
 
-        <!-- 6. At least one Picture, graphic requirement (Uses a placeholder web image) -->
+        <!-- 6. At least one Picture, graphic requirement -->
         <section id="gallery">
             <h2>Featured Graphic Portfolio</h2>
             <img src="https://unsplash.com" alt="LanceCo Custom Banner Graphic" class="showcase-image">
@@ -64,19 +66,24 @@
 
         <!-- 7 & 8. Footer for hyperlinks and Copyright elements -->
         <footer>
-            <!-- 8. Footer for hyperlinks requirement -->
             <div class="footer-links">
                 <a href="https://github.com" target="_blank" class="nav-link">GitHub</a>
                 <a href="#welcome" class="nav-link">Top of Page</a>
                 <a href="mailto:Shane.Rawlins14@login.cuny.edu" class="nav-link">Contact Email</a>
             </div>
-            <!-- 7. Copyright (with the Symbol incl.) All Rights Reserved 2012 requirement -->
             <p>&copy; 2012 Lance Co. All Rights Reserved.</p>
         </footer>
     </div>
 
-    <!-- 10. Special effects (Interactive Mouse Trail script) -->
+    <!-- Interactive Mouse Trail & Theme Toggle JavaScript Rules -->
     <script>
+        // 🌓 Theme Contrast Toggle Script Engine
+        const toggleBtn = document.getElementById('theme-toggle');
+        toggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+        });
+
+        // 🚀 Interactive Mouse Trail script
         document.addEventListener('mousemove', function(e) {
             const particle = document.createElement('div');
             particle.className = 'trail-particle';
@@ -99,4 +106,3 @@
 
 </body>
 </html>
-
