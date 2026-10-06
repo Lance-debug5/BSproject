@@ -6,138 +6,29 @@
     <!-- 1. Title on your page (Browser Tab) -->
     <title>Lance Co. Portfolio</title>
     
-    <style>
-        /* 4. Font Styles, Colors, and 9. Background Colors */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #ffffff; /* Crisp white body text matches logo canvas */
-            background-color: #12161a; /* Soft Off-Black Background minimizes white block contrast */
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            overflow-x: hidden;
-            
-            /* 11. Custom Cursor Effect */
-            cursor: crosshair; 
-        }
-
-        /* Layout Container */
-        .container {
-            max-width: 800px;
-            margin: 40px auto;
-            background: #1c1e24; /* Subtle charcoal block background */
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 25px rgba(157, 78, 221, 0.2); /* Purple Ambient Glow */
-            border: 1px solid #3c3f4a; 
-        }
-
-        /* Header styling */
-        header {
-            text-align: center;
-            border-bottom: 2px solid #9d4edd; /* Rich Purple Divider Line */
-            padding-bottom: 25px;
-            margin-bottom: 30px;
-        }
-
-        /* 1. Title on your page (Heading) */
-        h1 {
-            color: #b5179e; /* Vibrant Branding Purple */
-            font-size: 2.6rem;
-            margin-top: 15px;
-            font-weight: 800;
-            letter-spacing: 1px;
-        }
-
-        /* 2. Logo Box Integration (.jpg) */
-        .logo {
-            max-width: 140px;
-            height: auto;
-            border-radius: 8px; 
-            border: 3px solid #ffffff; 
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.1); 
-            background-color: #ffffff;
-        }
-
-        /* Section Styling */
-        section {
-            margin-bottom: 35px;
-        }
-
-        h2 {
-            color: #9d4edd; /* Electric Purple Subheadings */
-            border-left: 4px solid #ffffff; /* White visual anchor accent bar */
-            padding-left: 12px;
-            font-size: 1.5rem;
-        }
-
-        /* 6. Picture / Graphic Showcase Elements styling */
-        .showcase-image {
-            width: 100%;
-            max-height: 380px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-top: 15px;
-            border: 2px solid #3c3f4a;
-            /* 10. Special Effect - Smooth transition for hover */
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-        }
-
-        /* 10. Special Effects (Mouse rollover effect on your graphic banner) */
-        .showcase-image:hover {
-            transform: scale(1.01);
-            box-shadow: 0 8px 25px rgba(181, 23, 158, 0.5);
-            border-color: #b5179e; /* Glows purple on mouseover */
-            cursor: pointer;
-        }
-
-        /* 10. Special Effects (Mouse rollover effect on links) */
-        .nav-link {
-            color: #ffffff; 
-            text-decoration: none;
-            font-weight: bold;
-            margin: 0 12px;
-            padding-bottom: 4px;
-            transition: color 0.2s ease, border-bottom 0.2s ease;
-            border-bottom: 2px solid transparent;
-        }
-
-        .nav-link:hover {
-            color: #b5179e; /* Shifts smoothly to purple */
-            border-bottom: 2px solid #b5179e;
-            cursor: pointer;
-        }
-
-        /* 7 & 8. Footer Hyperlinks and Copyright elements */
-        footer {
-            text-align: center;
-            margin-top: 50px;
-            padding-top: 25px;
-            border-top: 2px solid #3c3f4a;
-            font-size: 0.9rem;
-            color: #a0a5b5;
-        }
-
-        .footer-links {
-            margin-bottom: 15px;
-        }
-
-        /* 10. Special Effects: Styling for the JavaScript Custom Mouse Trail particles */
-        .trail-particle {
-            position: fixed;
-            width: 8px;
-            height: 8px;
-            background-color: #b5179e; /* Purple dots matching your theme */
-            border-radius: 50%;
-            pointer-events: none; /* Stops particles from blocking clicks */
-            transform: translate(-50%, -50%);
-            transition: transform 0.5s linear, opacity 0.5s linear;
-            z-index: 9999;
-            box-shadow: 0 0 8px #9d4edd;
-        }
-    </style>
+    <!-- External CSS Link Requirement -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+    <!-- Responsive Navigation Menu with Dropdown Functionality (5+ links total) -->
+    <nav class="navbar">
+        <div class="nav-brand">Lance Co.</div>
+        <ul class="nav-menu">
+            <li><a href="#welcome" class="menu-link">Home</a></li>
+            <li><a href="#bio" class="menu-link">About</a></li>
+            <!-- Interactive Dropdown Submenu Feature -->
+            <li class="dropdown">
+                <a href="#goals" class="menu-link dropbtn">Focus Areas ▾</a>
+                <ul class="dropdown-content">
+                    <li><a href="#">JavaScript</a></li>
+                    <li><a href="#">Linux</a></li>
+                    <li><a href="#">Web Dev</a></li>
+                </ul>
+            </li>
+            <li><a href="#gallery" class="menu-link">Portfolio</a></li>
+        </ul>
+    </nav>
 
     <div class="container">
         <header>
@@ -165,7 +56,7 @@
             <p>I'm aiming to further my programming and web development skills and learn more about programs and languages like JavaScript or Linux.</p>
         </section>
 
-        <!-- 6. At least one Picture, graphic requirement (Uses an automated web image matching your theme) -->
+        <!-- 6. At least one Picture, graphic requirement (Uses a placeholder web image) -->
         <section id="gallery">
             <h2>Featured Graphic Portfolio</h2>
             <img src="https://unsplash.com" alt="LanceCo Custom Banner Graphic" class="showcase-image">
@@ -208,3 +99,4 @@
 
 </body>
 </html>
+
