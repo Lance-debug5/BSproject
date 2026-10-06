@@ -298,3 +298,15 @@ footer {
         padding-left: 15px;
     }
 }
+
+/* Styling for the new portfolio description text */
+.portfolio-desc {
+    margin-top: 15px;
+    font-size: 1.05rem;
+    color: #e5e5e5;
+}
+
+/* Color adjustment for the description text when Light Mode is active */
+body.light-mode .portfolio-desc {
+    color: #374151;
+}
