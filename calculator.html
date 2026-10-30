@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lance Co. | MPG Calculator</title>
+    <!-- Links to your existing external stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Extra custom styling to ensure the calculator looks great */
+        .calculator-card {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            max-width: 450px;
+            margin: 40px auto;
+            text-align: center;
+        }
+        .calculator-logo {
+            font-size: 60px;
+            margin-bottom: 15px;
+        }
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        .input-group input:focus {
+            border-color: #333;
+            outline: none;
+        }
+        .calc-btn {
+            width: 100%;
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 6px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .calc-btn:hover {
+            opacity: 0.9;
+        }
+        .result-box {
+            margin-top: 25px;
+            padding: 15px;
+            background-color: #f4f7f6;
+            border-left: 5px solid #333;
+            border-radius: 4px;
+            text-align: left;
+            display: none;
+        }
+        .result-box p {
+            margin: 5px 0;
+            font-size: 16px;
+        }
+        .result-box span {
+            font-weight: bold;
+        }
+        .error-message {
+            color: #e74c3c;
+            font-size: 14px;
+            margin-top: 10px;
+            display: none;
+            text-align: left;
+        }
+        .back-home-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #555;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Responsive Navigation Menu -->
+    <nav class="navbar">
+        <div class="nav-brand">Lance Co.</div>
+        <ul class="nav-menu">
+            <li><a href="index.html" class="menu-link">Home</a></li>
+            <li><a href="index.html#bio" class="menu-link">About</a></li>
+            <li><a href="calculator.html" class="menu-link active">MPG Calculator</a></li>
+            <li><a href="index.html#gallery" class="menu-link">Portfolio</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- Main Calculator Interface -->
+        <main class="calculator-card">
+            <!-- 2. Logo / Graphic for calculator requirement -->
+            <div class="calculator-logo">⛽</div>
+            <h2>Miles Per Gallon Calculator</h2>
+            <p>Enter your trip details below to compute your automobile's fuel economy.</p>
+            
+            <!-- Input Text Fields -->
+            <div class="input-group">
+                <label for="milesTraveled">Miles Traveled:</label>
+                <input type="number" id="milesTraveled" placeholder="e.g. 350" min="0" step="any">
+            </div>
+            
+            <div class="input-group">
+                <label for="gallonsOfGas">Gallons of Gas Used:</label>
+                <input type="number" id="gallonsOfGas" placeholder="e.g. 12" min="0.01" step="any">
+            </div>
+            
+            <button class="calc-btn" onclick="calculateMPG()">Calculate MPG</button>
+            
+            <!-- Output Panels -->
+            <div class="result-box" id="resultBox">
+                <p>Your Fuel Economy is: <span id="mpgOutput">0</span> MPG</p>
+            </div>
+            <div class="error-message" id="errorMessage">⚠️ Please enter valid positive numbers. Gallons must be greater than 0.</div>
+            
+            <a href="index.html" class="back-home-link">← Back to Portfolio Home</a>
+        </main>
+
+        <!-- Footer Element -->
+        <footer>
+            <div class="footer-links">
+                <a href="https://github.com" target="_blank" class="nav-link">GitHub</a>
+                <a href="mailto:Shane.Rawlins14@login.cuny.edu" class="nav-link">Contact Email</a>
+            </div>
+            <p>&copy; 2012 Lance Co. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <!-- JavaScript Calculation Engine (Corrected Pseudocode Bugs) -->
+    <script>
+        function calculateMPG() {
+            // Read standard element variables
+            const milesTraveled = parseFloat(document.getElementById('milesTraveled').value);
+            const gallonsOfGas = parseFloat(document.getElementById('gallonsOfGas').value);
+            
+            const resultBox = document.getElementById('resultBox');
+            const mpgOutput = document.getElementById('mpgOutput');
+            const errorMessage = document.getElementById('errorMessage');
+            
+            // Validation validation constraints
+            if (isNaN(milesTraveled) || isNaN(gallonsOfGas) || milesTraveled < 0 || gallonsOfGas <= 0) {
+                errorMessage.style.display = 'block';
+                resultBox.style.display = 'none';
+                return;
+            }
+            
+            // Hide previous errors if entry is valid
+            errorMessage.style.display = 'none';
+            
+            // Corrected formula logic: division instead of addition operator
+            const milesPerGallon = milesTraveled / gallonsOfGas;
+            
+            // Print execution value fixed to two decimals
+            mpgOutput.textContent = milesPerGallon.toFixed(2);
+            resultBox.style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
