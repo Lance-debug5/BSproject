@@ -17,7 +17,7 @@
         <ul class="nav-menu">
             <li><a href="#welcome" class="menu-link">Home</a></li>
             <li><a href="#bio" class="menu-link">About</a></li>
-            <a href="calculator.html">Go to MPG Calculator</a>
+            <li><a href="calculator.html" class="menu-link">MPG Calculator</a></li>
 
             <!-- Interactive Dropdown Submenu Feature -->
             <li class="dropdown">
@@ -60,12 +60,48 @@
             <p>I'm aiming to further my programming and web development skills and learn more about programs and languages like JavaScript or Linux.</p>
         </section>
 
-                       <!-- 6. At least one Picture, graphic requirement -->
+        <!-- 6. Interactive Auto Image Slider integrated into your Gallery -->
         <section id="gallery">
             <h2>Gallery</h2>
-            <!-- Fixed with the direct raw image link from ComicsBeat -->
-            <img src="https://comicsbeat.com" alt="LanceCo Transformers Comic Portfolio Graphic" class="showcase-image">
-            <p class="portfolio-desc">Welcome to my gallery!This will feature images i feel be represent my self.</p>
+            <p class="portfolio-desc">Welcome to my gallery! This features images that represent me and my interests.</p>
+
+            <div class="slideshow-container">
+                <!-- Slide 1 (Replace src with your 4+ own image files) -->
+                <div class="slide fade">
+                    <img src="images/slide1.jpg" alt="Lance Co Showcase Image 1" class="showcase-image">
+                    <div class="caption">01 / 04 — My Tech & Linux Setup</div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="slide fade">
+                    <img src="images/slide2.jpg" alt="Lance Co Showcase Image 2" class="showcase-image">
+                    <div class="caption">02 / 04 — Favorite Comics & Inspiration</div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="slide fade">
+                    <img src="images/slide3.jpg" alt="Lance Co Showcase Image 3" class="showcase-image">
+                    <div class="caption">03 / 04 — Web Development Projects</div>
+                </div>
+
+                <!-- Slide 4 -->
+                <div class="slide fade">
+                    <img src="images/slide4.jpg" alt="Lance Co Showcase Image 4" class="showcase-image">
+                    <div class="caption">04 / 04 — Campus & CIS Journey</div>
+                </div>
+
+                <!-- Forward & Backward Navigation Controls -->
+                <button class="prev" onclick="changeSlide(-1)" aria-label="Previous Image">&#10094;</button>
+                <button class="next" onclick="changeSlide(1)" aria-label="Next Image">&#10095;</button>
+            </div>
+
+            <!-- Extra Credit: Thumbnail Preview Navigation -->
+            <div class="thumbnails">
+                <img class="thumb" src="images/slide1.jpg" onclick="goToSlide(0)" alt="Preview 1">
+                <img class="thumb" src="images/slide2.jpg" onclick="goToSlide(1)" alt="Preview 2">
+                <img class="thumb" src="images/slide3.jpg" onclick="goToSlide(2)" alt="Preview 3">
+                <img class="thumb" src="images/slide4.jpg" onclick="goToSlide(3)" alt="Preview 4">
+            </div>
         </section>
 
         <!-- 7 & 8. Footer for hyperlinks and Copyright elements -->
@@ -79,7 +115,7 @@
         </footer>
     </div>
 
-    <!-- Interactive Mouse Trail & Theme Toggle JavaScript Rules -->
+    <!-- Interactive Mouse Trail, Theme Toggle, & Image Slider JavaScript -->
     <script>
         // 🌓 Theme Contrast Toggle Script Engine
         const toggleBtn = document.getElementById('theme-toggle');
@@ -106,6 +142,60 @@
                 particle.remove();
             }, 500);
         });
+
+        // 🖼️ Auto Image Slider Engine (Uses let, for loops, functions, & DOM manipulation)
+        let currentIndex = 0;
+        let autoPlayTimer;
+
+        showSlide(currentIndex);
+        startAutoPlay();
+
+        function changeSlide(step) {
+            showSlide(currentIndex + step);
+            resetAutoPlay();
+        }
+
+        function goToSlide(index) {
+            showSlide(index);
+            resetAutoPlay();
+        }
+
+        function showSlide(index) {
+            let slides = document.getElementsByClassName("slide");
+            let thumbs = document.getElementsByClassName("thumb");
+
+            if (index >= slides.length) {
+                currentIndex = 0;
+            } else if (index < 0) {
+                currentIndex = slides.length - 1;
+            } else {
+                currentIndex = index;
+            }
+
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            for (let i = 0; i < thumbs.length; i++) {
+                thumbs[i].classList.remove("active");
+            }
+
+            slides[currentIndex].style.display = "block";
+            if (thumbs[currentIndex]) {
+                thumbs[currentIndex].classList.add("active");
+            }
+        }
+
+        function startAutoPlay() {
+            autoPlayTimer = setInterval(function () {
+                showSlide(currentIndex + 1);
+            }, 3500);
+        }
+
+        function resetAutoPlay() {
+            clearInterval(autoPlayTimer);
+            startAutoPlay();
+        }
     </script>
 
 </body>
