@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | LittleBotsBigplanet</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-brand">LittleBotsBigplanet</div>
+        <ul class="nav-menu">
+            <li><a href="index.html" class="menu-link">Home</a></li>
+            <li><a href="about.html" class="menu-link">About</a></li>
+            <li><a href="index.html#figure-gallery" class="menu-link">Figure Gallery</a></li>
+            <li><a href="applications.html" class="menu-link">Applications</a></li>
+            <li><a href="contact.html" class="menu-link">Contact</a></li>
+            <li><button id="theme-toggle" class="toggle-btn">Decepticon Mode 👾</button></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <header>
+            <img src="logo.jpg" alt="LittleBotsBigplanet Logo" class="logo">
+            <h1>About LittleBotsBigplanet</h1>
+        </header>
+
+        <section>
+            <h2>The Concept</h2>
+            <p><strong>LittleBotsBigplanet</strong> started from a simple idea: taking detailed, small-scale Transformers and collectible figures out of display cases and photographing them in real-world outdoor environments—parks, moss trails, concrete overpasses, and city skylines—to make them look towering and alive.</p>
+        </section>
+
+        <section>
+            <h2>About the Creator</h2>
+            <p>My real name is Shane, though I also go by Lance—either works! I am a Computer Information Systems major in my second-to-last semester, balancing web development, JavaScript programming, and Linux coursework with outdoor toy photography around New York.</p>
+        </section>
+
+        <section>
+            <h2>Gear &amp; Tech Stack</h2>
+            <p><strong>Photography Setup:</strong> Shot outdoors using natural golden-hour light, low-angle forced perspective, and portable carrying gear to keep accessories organized in the field.</p>
+            <p><strong>Web Development Stack:</strong> Built from scratch with semantic HTML5, responsive CSS3 (featuring custom Autobot/Decepticon theme switching), and vanilla JavaScript DOM applications.</p>
+        </section>
+
+        <footer>
+            <div class="footer-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="applications.html" class="nav-link">Applications</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <p>&copy; 2026 LittleBotsBigplanet. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        const toggleBtn = document.getElementById('theme-toggle');
+        toggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('decepticon-mode');
+            toggleBtn.textContent = document.body.classList.contains('decepticon-mode')
+                ? 'Autobot Mode 🛡️' : 'Decepticon Mode 👾';
+        });
+    </script>
+</body>
+</html>
