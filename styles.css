@@ -1,121 +1,162 @@
 /* ==========================================
-   4. Font Styles, Colors, and 9. Background Colors 
+   DEFAULT: AUTOBOT MODE (White, Blue & Red Accents)
    ========================================== */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #0f172a; /* Crisp dark slate body text on white */
-    background-color: #f0f6ff; /* Soft Sky-White Background */
+    color: #0f172a;
+    background-color: #f0f6ff;
     margin: 0;
     padding: 0;
     line-height: 1.6;
     overflow-x: hidden;
-    cursor: crosshair; /* 11. Custom Cursor Effect */
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* 🌓 High Contrast Deep-Blue Rules (Toggle Contrast 🌗) */
-body.light-mode {
-    color: #f8fafc;
-    background-color: #0a192f;
-}
-
-body.light-mode .container {
-    background: #112240;
-    border-color: #233554;
-    box-shadow: 0 4px 25px rgba(2, 12, 27, 0.7);
-}
-
-body.light-mode .navbar {
-    background-color: #112240;
-    border-bottom: 1px solid #233554;
-}
-
-body.light-mode .menu-link,
-body.light-mode .dropdown-content a {
-    color: #e6f1ff;
-}
-
-body.light-mode .dropdown-content {
-    background-color: #112240;
-    border-color: #233554;
-}
-
-body.light-mode footer {
-    border-top: 2px solid #233554;
-    color: #8892b0;
-}
-
-body.light-mode .nav-link {
-    color: #64b5f6;
+    cursor: crosshair;
+    transition: background-color 0.35s ease, color 0.35s ease;
 }
 
 /* ==========================================
-   🧱 Layout & Structural Container Components
+   DECEPTICON MODE (Dark Cybertron Slate + Purple)
+   ========================================== */
+body.decepticon-mode {
+    color: #f3e8ff;
+    background-color: #0d0b14;
+}
+
+body.decepticon-mode .container {
+    background: #171424;
+    border-color: #581c87;
+    box-shadow: 0 4px 28px rgba(157, 78, 221, 0.3);
+}
+
+body.decepticon-mode .navbar {
+    background-color: #171424;
+    border-bottom: 2px solid #7e22ce;
+}
+
+body.decepticon-mode .nav-brand {
+    color: #c084fc;
+}
+
+body.decepticon-mode .menu-link,
+body.decepticon-mode .dropdown-content a {
+    color: #f3e8ff;
+}
+
+body.decepticon-mode .menu-link:hover {
+    color: #d8b4fe;
+    background-color: rgba(168, 85, 247, 0.15);
+}
+
+body.decepticon-mode .dropdown-content {
+    background-color: #171424;
+    border-color: #6b21a8;
+}
+
+body.decepticon-mode .dropdown-content a:hover {
+    background-color: #7e22ce;
+}
+
+body.decepticon-mode header {
+    border-bottom-color: #9333ea;
+}
+
+body.decepticon-mode h1 {
+    color: #c084fc;
+}
+
+body.decepticon-mode h2 {
+    color: #a855f7;
+    border-left-color: #e879f9;
+}
+
+body.decepticon-mode .logo {
+    border-color: #9333ea;
+    box-shadow: 0 0 18px rgba(168, 85, 247, 0.45);
+}
+
+body.decepticon-mode .toggle-btn {
+    background-color: #7e22ce;
+    color: #ffffff;
+    box-shadow: 0 0 12px rgba(168, 85, 247, 0.5);
+}
+
+body.decepticon-mode .toggle-btn:hover {
+    background-color: #9333ea;
+}
+
+body.decepticon-mode .portfolio-desc {
+    color: #d8b4fe;
+}
+
+body.decepticon-mode footer {
+    border-top-color: #581c87;
+    color: #a78bfa;
+}
+
+body.decepticon-mode .nav-link {
+    color: #c084fc;
+}
+
+body.decepticon-mode .nav-link:hover {
+    color: #e879f9;
+    border-bottom-color: #e879f9;
+}
+
+body.decepticon-mode .trail-particle {
+    background-color: #a855f7;
+    box-shadow: 0 0 10px #c084fc;
+}
+
+/* ==========================================
+   Layout & Structural Container Components
    ========================================== */
 .container {
-    max-width: 800px;
+    max-width: 850px;
     margin: 40px auto;
-    background: #ffffff; /* Crisp White Card Container */
+    background: #ffffff;
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 4px 25px rgba(29, 78, 216, 0.14); /* Blue Ambient Glow */
-    border: 1px solid #bfdbfe; 
-    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 25px rgba(29, 78, 216, 0.15);
+    border: 1px solid #bfdbfe;
+    transition: background-color 0.35s ease, border-color 0.35s ease;
 }
 
 header {
     text-align: center;
-    border-bottom: 2px solid #2563eb; /* Royal Blue Divider Line */
+    border-bottom: 3px solid #1d4ed8;
     padding-bottom: 25px;
     margin-bottom: 30px;
 }
 
 h1 {
-    color: #1d4ed8; /* Vibrant Branding Blue */
+    color: #1d4ed8;
     font-size: 2.6rem;
     margin-top: 15px;
     font-weight: 800;
     letter-spacing: 1px;
 }
 
-body.light-mode h1,
-body.light-mode h2,
-body.light-mode .nav-brand {
-    color: #60a5fa;
-}
-
 .logo {
     max-width: 140px;
     height: auto;
-    border-radius: 8px; 
-    border: 3px solid #2563eb; 
-    box-shadow: 0 0 15px rgba(37, 99, 235, 0.15); 
+    border-radius: 8px;
+    border: 3px solid #1d4ed8;
+    box-shadow: 0 0 15px rgba(37, 99, 235, 0.2);
     background-color: #ffffff;
 }
 
 section {
-    margin-bottom: 35px;
+    margin-bottom: 38px;
 }
 
 h2 {
-    color: #2563eb; /* Electric Blue Subheadings */
-    border-left: 4px solid #0284c7; 
+    color: #1d4ed8;
+    border-left: 4px solid #dc2626;
     padding-left: 12px;
     font-size: 1.5rem;
 }
 
-.showcase-image {
-    width: 100%;
-    max-height: 380px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-top: 15px;
-    border: 2px solid #bfdbfe;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-}
-
 /* ==========================================
-   🍔 Responsive Navigation Framework Styling 
+   Responsive Navigation Framework Styling 
    ========================================== */
 .navbar {
     display: flex;
@@ -125,7 +166,7 @@ h2 {
     padding: 15px 40px;
     border-bottom: 2px solid #bfdbfe;
     box-shadow: 0 2px 10px rgba(29, 78, 216, 0.08);
-    transition: background-color 0.3s ease;
+    transition: background-color 0.35s ease;
 }
 
 .nav-brand {
@@ -162,26 +203,26 @@ h2 {
     border-radius: 6px;
 }
 
-/* 🌗 Toggle Button Styling */
 .toggle-btn {
-    background-color: #2563eb;
+    background-color: #1d4ed8;
     color: #ffffff;
     border: none;
-    padding: 8px 14px;
+    padding: 8px 15px;
     border-radius: 20px;
     font-weight: bold;
     cursor: pointer;
     margin-left: 15px;
-    transition: background 0.2s ease;
+    box-shadow: 0 0 10px rgba(37, 99, 235, 0.3);
+    transition: background-color 0.25s ease, transform 0.15s ease;
 }
 
 .toggle-btn:hover {
-    background-color: #1d4ed8;
+    background-color: #dc2626;
+    transform: translateY(-1px);
 }
 
-/* --- Dropdown Layout Elements --- */
 .dropdown-content {
-    display: none; 
+    display: none;
     position: absolute;
     top: 100%;
     left: 0;
@@ -214,17 +255,124 @@ h2 {
 }
 
 /* ==========================================
-   ✨ Hover Overrides & Special Visual Effects
+   Interactive Hover-Enlarge Figure Gallery Grid
    ========================================== */
-.showcase-image:hover {
-    transform: scale(1.01);
-    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.35);
-    border-color: #2563eb;
-    cursor: pointer;
+.figure-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 20px;
 }
 
+.figure-card {
+    position: relative;
+    display: block;
+    height: 270px;
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none;
+    border: 2px solid #93c5fd;
+    box-shadow: 0 6px 16px rgba(29, 78, 216, 0.12);
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.figure-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.45s ease;
+}
+
+.figure-card:hover {
+    transform: translateY(-6px) scale(1.03);
+    border-color: #2563eb;
+    box-shadow: 0 12px 28px rgba(37, 99, 235, 0.4);
+    z-index: 10;
+}
+
+.figure-card:hover img {
+    transform: scale(1.1);
+}
+
+body.decepticon-mode .figure-card {
+    border-color: #6b21a8;
+    box-shadow: 0 6px 18px rgba(126, 34, 206, 0.25);
+}
+
+body.decepticon-mode .figure-card:hover {
+    border-color: #c084fc;
+    box-shadow: 0 12px 30px rgba(168, 85, 247, 0.55);
+}
+
+.figure-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(15, 23, 42, 0.94) 15%, rgba(29, 78, 216, 0.55) 75%, transparent 100%);
+    color: #ffffff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+body.decepticon-mode .figure-overlay {
+    background: linear-gradient(to top, rgba(13, 11, 20, 0.95) 15%, rgba(126, 34, 206, 0.6) 75%, transparent 100%);
+}
+
+.figure-card:hover .figure-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.faction-tag {
+    display: inline-block;
+    background-color: #2563eb;
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+    width: fit-content;
+}
+
+body.decepticon-mode .faction-tag {
+    background-color: #9333ea;
+}
+
+.figure-overlay h3 {
+    margin: 0 0 6px 0;
+    font-size: 1.15rem;
+    color: #ffffff;
+}
+
+.figure-overlay p {
+    margin: 0 0 10px 0;
+    font-size: 0.88rem;
+    line-height: 1.4;
+    color: #e2e8f0;
+}
+
+.read-more {
+    font-size: 0.82rem;
+    font-weight: bold;
+    color: #93c5fd;
+}
+
+body.decepticon-mode .read-more {
+    color: #e879f9;
+}
+
+/* ==========================================
+   Footer & Mouse Trail Effects
+   ========================================== */
 .nav-link {
-    color: #1d4ed8; 
+    color: #1d4ed8;
     text-decoration: none;
     font-weight: bold;
     margin: 0 12px;
@@ -234,8 +382,8 @@ h2 {
 }
 
 .nav-link:hover {
-    color: #0284c7;
-    border-bottom: 2px solid #0284c7;
+    color: #dc2626;
+    border-bottom: 2px solid #dc2626;
     cursor: pointer;
 }
 
@@ -265,66 +413,19 @@ footer {
     box-shadow: 0 0 8px #38bdf8;
 }
 
-/* ==========================================
-   📱 Media Query (Mobile Layout Setup)
-   ========================================== */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 15px 20px;
-    }
-
-    .nav-menu {
-        flex-direction: column;
-        width: 100%;
-        margin-top: 10px;
-        align-items: flex-start;
-    }
-
-    .nav-menu li {
-        width: 100%;
-    }
-
-    .menu-link {
-        padding: 12px 5px;
-    }
-
-    .toggle-btn {
-        margin: 10px 0 0 0;
-        width: 100%;
-    }
-
-    .dropdown-content {
-        position: relative;
-        top: 0;
-        box-shadow: none;
-        border: none;
-        background-color: rgba(37, 99, 235, 0.05);
-        padding-left: 15px;
-    }
-}
-
-/* Styling for the portfolio description text */
-.portfolio-desc {
-    margin-top: 15px;
-    font-size: 1.05rem;
-    color: #334155;
-    line-height: 1.6;
-}
-
-/* Color adjustment for the description text when High Contrast Mode is active */
-body.light-mode .portfolio-desc {
-    color: #cbd5e1;
-}
-
 /* =========================================
-   Auto Image Slider (Matches LittleBotsBigplanet Theme)
+   Auto Image Slider
    ========================================= */
+.portfolio-desc {
+    margin-top: 10px;
+    font-size: 1.02rem;
+    color: #334155;
+}
+
 .slideshow-container {
     position: relative;
     width: 100%;
-    max-width: 800px;
+    max-width: 850px;
     margin: 18px auto 0 auto;
     overflow: hidden;
     border-radius: 10px;
@@ -333,9 +434,9 @@ body.light-mode .portfolio-desc {
     background-color: #e0f2fe;
 }
 
-body.light-mode .slideshow-container {
-    border-color: #1d4ed8;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+body.decepticon-mode .slideshow-container {
+    border-color: #7e22ce;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
 }
 
 .slide {
@@ -345,7 +446,7 @@ body.light-mode .slideshow-container {
 
 .slide img.showcase-image {
     width: 100%;
-    height: 420px;
+    height: 400px;
     object-fit: cover;
     display: block;
     margin: 0;
@@ -353,72 +454,22 @@ body.light-mode .slideshow-container {
     border: none;
 }
 
-/* Caption Overlay (Extra Credit) */
 .caption {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     padding: 12px 16px;
-    background: rgba(15, 23, 42, 0.78);
+    background: rgba(15, 23, 42, 0.8);
     color: #ffffff;
     font-size: 0.95rem;
     text-align: left;
-    letter-spacing: 0.3px;
 }
 
-/* Prev & Next Controls */
 .prev, .next {
     cursor: pointer;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: auto;
     padding: 12px 16px;
     color: #ffffff;
-    font-weight: bold;
-    font-size: 1.2rem;
-    background-color: rgba(29, 78, 216, 0.75);
-    border: none;
-    border-radius: 6px;
-    transition: background-color 0.2s ease;
-    user-select: none;
-}
-
-.prev {
-    left: 12px;
-}
-
-.next {
-    right: 12px;
-}
-
-.prev:hover, .next:hover {
-    background-color: #1d4ed8;
-}
-
-/* Thumbnail Preview Strip (Extra Credit) */
-.thumbnails {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 14px;
-}
-
-.thumb {
-    width: 75px;
-    height: 52px;
-    object-fit: cover;
-    border-radius: 6px;
-    cursor: pointer;
-    opacity: 0.6;
-    border: 2px solid transparent;
-    transition: opacity 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
-}
-
-.thumb:hover,
-.thumb.active {
-    opacity: 1;
-    border-color: #2563eb;
-    transform: translateY(-2px);
-}
