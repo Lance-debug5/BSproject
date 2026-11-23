@@ -3,99 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 1. Title on your page (Browser Tab) -->
-    <title>LittleBotsBigplanet | Outdoor Figure Photography & Dev Portfolio</title>
-    
-    <!-- External CSS Link Requirement -->
+    <title>LittleBotsBigplanet | Outdoor Figure Photography & Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <!-- Responsive Navigation Menu with Dropdown Functionality -->
     <nav class="navbar">
         <div class="nav-brand">LittleBotsBigplanet</div>
         <ul class="nav-menu">
             <li><a href="#welcome" class="menu-link">Home</a></li>
             <li><a href="#bio" class="menu-link">About</a></li>
-            <li><a href="calculator.html" class="menu-link">MPG Calculator</a></li>
-
-            <!-- Interactive Dropdown Submenu Feature -->
+            <li><a href="#figure-gallery" class="menu-link">Figure Gallery</a></li>
             <li class="dropdown">
                 <a href="#goals" class="menu-link dropbtn">Focus Areas ▾</a>
                 <ul class="dropdown-content">
-                    <li><a href="#gallery">Outdoor Toy Photography</a></li>
+                    <li><a href="#figure-gallery">Outdoor Photography</a></li>
                     <li><a href="#goals">JavaScript & Web Dev</a></li>
                     <li><a href="#goals">Linux & Systems</a></li>
                 </ul>
             </li>
-            <li><a href="#gallery" class="menu-link">Gallery</a></li>
-            <!-- 🌗 Theme Toggle Controller -->
-            <li><button id="theme-toggle" class="toggle-btn">Toggle Contrast 🌗</button></li>
+            <li><a href="#gallery" class="menu-link">Showcase</a></li>
+            <li><button id="theme-toggle" class="toggle-btn">Decepticon Mode 👾</button></li>
         </ul>
     </nav>
 
     <div class="container">
         <header>
-            <!-- 2. Include your logo (.jpg) requirement -->
             <img src="logo.jpg" alt="LittleBotsBigplanet Logo" class="logo">
-            <!-- 1. Title on your page (Heading) -->
             <h1>LittleBotsBigplanet</h1>
         </header>
 
-        <!-- 3. Introduction text requirement -->
         <section id="welcome">
             <h2>Welcome</h2>
-            <p>Welcome to LittleBotsBigplanet! This is where small-scale figures meet the big outdoors—combining outdoor toy photography with custom web development and interactive JavaScript apps.</p>
+            <p>Welcome to LittleBotsBigplanet! This is where small-scale figures meet the big outdoors—combining forced-perspective outdoor toy photography with custom web development and interactive JavaScript projects.</p>
         </section>
 
-        <!-- 5. Short Bio requirement -->
         <section id="bio">
             <h2>A lil about me</h2>
-            <p>My real name is Shane, though I also go by Lance—either works! I'm a Computer Information Systems major in my second-to-last semester. When I'm not coding or exploring what's next after graduation, I take Transformers and collectible figures out into the wild to capture forced-perspective outdoor photography.</p>
+            <p>My real name is Shane, though I also go by Lance—either works! I'm a Computer Information Systems major in my second-to-last semester. When I'm not coding or exploring what's next after graduation, I take Transformers and collectible figures out into parks, trails, and cityscapes to photograph them in real-world environments.</p>
         </section>
 
-        <!-- Goals Section -->
         <section id="goals">
             <h2>Goals</h2>
-            <p>I'm aiming to grow LittleBotsBigplanet as both a showcase for outdoor figure shoots and a hub for my programming and web development projects using JavaScript, HTML/CSS, and Linux.</p>
+            <p>I'm aiming to grow LittleBotsBigplanet as both an outdoor figure photography archive and a showcase for my programming and web development skills using JavaScript, HTML/CSS, and Linux.</p>
         </section>
 
-        <!-- 6. Interactive Auto Image Slider integrated into your Gallery -->
+        <section id="figure-gallery">
+            <h2>Outdoor Figure Expeditions</h2>
+            <p class="portfolio-desc">Hover over any shot to inspect the figure and field notes, or click a card to open its dedicated figure page.</p>
+
+            <div class="figure-grid">
+                <a href="figure-optimus.html" class="figure-card">
+                    <img src="KBB.png" alt="Optimus Prime Outdoor Shot">
+                    <div class="figure-overlay">
+                        <span class="faction-tag">Autobot • Studio Series 86</span>
+                        <h3>Optimus Prime — Trail Patrol</h3>
+                        <p>Captured at golden hour using natural moss and low-angle perspective to give Commander scale.</p>
+                        <span class="read-more">Click to view figure profile →</span>
+                    </div>
+                </a>
+
+                <a href="figure-jazz.html" class="figure-card">
+                    <img src="Jazz.png" alt="Autobot Jazz Outdoor Shot">
+                    <div class="figure-overlay">
+                        <span class="faction-tag">Autobot • Recon Unit</span>
+                        <h3>Jazz — A Sunny Day Out</h3>
+                        <p>Shot in bright afternoon sunlight along rocky terrain to highlight crisp white and blue paint apps.</p>
+                        <span class="read-more">Click to view figure profile →</span>
+                    </div>
+                </a>
+
+                <a href="figure-soundwave.html" class="figure-card">
+                    <img src="Musicvibes.png" alt="Decepticon Figure Outdoor Shot">
+                    <div class="figure-overlay">
+                        <span class="faction-tag">Decepticon • Comms Ops</span>
+                        <h3>Soundwave — Perimeter Scan</h3>
+                        <p>Positioned on weathered stone outdoors for dramatic shadows and Cybertronian vibes.</p>
+                        <span class="read-more">Click to view figure profile →</span>
+                    </div>
+                </a>
+
+                <a href="figure-megatron.html" class="figure-card">
+                    <img src="WPM2.png" alt="Cybertronian Horizon Outdoor Shot">
+                    <div class="figure-overlay">
+                        <span class="faction-tag">Archive • Big Planet Series</span>
+                        <h3>Horizon Watch — Field Edition</h3>
+                        <p>Wide-angle outdoor composition blending miniature scale accessories with real tree lines.</p>
+                        <span class="read-more">Click to view figure profile →</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
         <section id="gallery">
-            <h2>Outdoor Figure Gallery</h2>
-            <p class="portfolio-desc">Welcome to the LittleBotsBigplanet gallery! Here is a look at our featured figure expeditions and visual showcases.</p>
+            <h2>Featured Reel</h2>
+            <p class="portfolio-desc">Auto-playing highlight reel from recent outdoor shoots.</p>
 
             <div class="slideshow-container">
-                <!-- Slide 1 -->
                 <div class="slide fade">
                     <img src="KBB.png" alt="Outdoor figure expedition shot 1" class="showcase-image">
                     <div class="caption">01 / 04 — Patrol in the Tall Grass</div>
                 </div>
 
-                <!-- Slide 2 -->
                 <div class="slide fade">
                     <img src="Jazz.png" alt="Outdoor figure expedition shot 2" class="showcase-image">
-                    <div class="caption">02 / 04 — Golden Hour Recon</div>
+                    <div class="caption">02 / 04 — A Sunny Day with Jazz</div>
                 </div>
 
-                <!-- Slide 3 -->
                 <div class="slide fade">
                     <img src="Musicvibes.png" alt="Outdoor figure expedition shot 3" class="showcase-image">
                     <div class="caption">03 / 04 — Trailside Outpost</div>
                 </div>
 
-                <!-- Slide 4 -->
                 <div class="slide fade">
                     <img src="WPM2.png" alt="Outdoor figure expedition shot 4" class="showcase-image">
                     <div class="caption">04 / 04 — Big Planet Horizons</div>
                 </div>
 
-                <!-- Forward & Backward Navigation Controls -->
                 <button class="prev" onclick="changeSlide(-1)" aria-label="Previous Image">❮</button>
                 <button class="next" onclick="changeSlide(1)" aria-label="Next Image">❯</button>
             </div>
 
-            <!-- Extra Credit: Thumbnail Preview Navigation -->
             <div class="thumbnails">
                 <img class="thumb" src="KBB.png" onclick="goToSlide(0)" alt="Preview 1">
                 <img class="thumb" src="Jazz.png" onclick="goToSlide(1)" alt="Preview 2">
@@ -104,7 +132,6 @@
             </div>
         </section>
 
-        <!-- 7 & 8. Footer for hyperlinks and Copyright elements -->
         <footer>
             <div class="footer-links">
                 <a href="https://github.com" target="_blank" class="nav-link">GitHub</a>
@@ -115,35 +142,32 @@
         </footer>
     </div>
 
-    <!-- Interactive Mouse Trail, Theme Toggle, & Image Slider JavaScript -->
     <script>
-        // 🌓 Theme Contrast Toggle Script Engine
         const toggleBtn = document.getElementById('theme-toggle');
         toggleBtn.addEventListener('click', () => {
-            document.body.classList.toggle('light-mode');
+            document.body.classList.toggle('decepticon-mode');
+            if (document.body.classList.contains('decepticon-mode')) {
+                toggleBtn.textContent = 'Autobot Mode 🛡️';
+            } else {
+                toggleBtn.textContent = 'Decepticon Mode 👾';
+            }
         });
 
-        // 🚀 Interactive Mouse Trail script
         document.addEventListener('mousemove', function(e) {
             const particle = document.createElement('div');
             particle.className = 'trail-particle';
-            
             particle.style.left = e.clientX + 'px';
             particle.style.top = e.clientY + 'px';
-            
             document.body.appendChild(particle);
-            
             setTimeout(() => {
                 particle.style.transform = 'translate(-50%, -50%) scale(0)';
                 particle.style.opacity = '0';
             }, 10);
-            
             setTimeout(() => {
                 particle.remove();
             }, 500);
         });
 
-        // 🖼️ Auto Image Slider Engine (Uses let, for loops, functions, & DOM manipulation)
         let currentIndex = 0;
         let autoPlayTimer;
 
