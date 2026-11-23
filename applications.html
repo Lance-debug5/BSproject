@@ -1,1 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applications & Field Tools | LittleBotsBigplanet</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .app-card {
+            background: rgba(37, 99, 235, 0.05);
+            border: 1px solid #93c5fd;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+        body.decepticon-mode .app-card {
+            background: rgba(126, 34, 206, 0.12);
+            border-color: #6b21a8;
+        }
+        .app-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 440px;
+            margin-top: 12px;
+        }
+        .app-form label { font-weight: 600; font-size: 0.9rem; }
+        .app-form input, .app-form select {
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #93c5fd;
+            font-size: 0.95rem;
+        }
+        .app-btn {
+            background-color: #1d4ed8;
+            color: #ffffff;
+            border: none;
+            padding: 11px 16px;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 4px;
+        }
+        body.decepticon-mode .app-btn { background-color: #7e22ce; }
+        .app-result {
+            margin-top: 12px;
+            font-weight: bold;
+            color: #1d4ed8;
+            line-height: 1.5;
+        }
+        body.decepticon-mode .app-result { color: #d8b4fe; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-brand">LittleBotsBigplanet</div>
+        <ul class="nav-menu">
+            <li><a href="index.html" class="menu-link">Home</a></li>
+            <li><a href="index.html#bio" class="menu-link">About</a></li>
+            <li><a href="index.html#figure-gallery" class="menu-link">Figure Gallery</a></li>
+            <li><a href="applications.html" class="menu-link">Applications</a></li>
+            <li><button id="theme-toggle" class="toggle-btn">Decepticon Mode 👾</button></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>Field Tools &amp; JS Applications</h1>
+            <p>Interactive JavaScript web apps built during my CIS coursework, integrated into LittleBotsBigplanet.</p>
+        </header>
+
+        <!-- APP 1: Multi-Day Toy Expo Ticket & Travel Estimator -->
+        <section class="app-card">
+            <h2>1. Toy Expo Multi-Day Ticket &amp; Travel Estimator</h2>
+            <p>Estimate the total cost to attend a collector convention for X days, including passes and round-trip travel.</p>
+            <div class="app-form">
+                <label for="ticket-type">Pass Tier (Per Day)</label>
+                <select id="ticket-type">
+                    <option value="25">General Admission ($25 / day)</option>
+                    <option value="55">VIP Early Access + Photo Pass ($55 / day)</option>
+                </select>
+                <label for="expo-days">Number of Days Attending (3+ days = 15% off passes)</label>
+                <input type="number" id="expo-days" min="1" value="2">
+                <label for="ticket-qty">Number of Attendees</label>
+                <input type="number" id="ticket-qty" min="1" value="1">
+                <label for="trip-miles">Round-Trip Travel Distance (Miles)</label>
+                <input type="number" id="trip-miles" min="0" value="60">
+                <label for="car-mpg">Vehicle MPG &amp; Gas Price ($3.40/gal default)</label>
+                <input type="number" id="car-mpg" min="1" value="28">
+                <button class="app-btn" onclick="calculateExpoTrip()">Calculate Total Expo &amp; Travel Cost</button>
+                <div id="ticket-result" class="app-result"></div>
+            </div>
+        </section>
+
+        <!-- APP 2: Expedition MPG Calculator -->
+        <section class="app-card">
+            <h2>2. Outdoor Shoot MPG Calculator</h2>
+            <p>Calculate your vehicle's fuel efficiency after driving out to parks and trails for figure shoots.</p>
+            <div class="app-form">
+                <input type="number" id="miles" placeholder="Miles Driven (e.g., 120)">
+                <input type="number" id="gallons" placeholder="Gallons Used (e.g., 4.5)">
+                <button class="app-btn" onclick="calculateMPG()">Calculate MPG</button>
+                <div id="mpg-result" class="app-result"></div>
+            </div>
+        </section>
+
+        <!-- APP 3: Form Validation App -->
+        <section class="app-card">
+            <h2>3. Outdoor Shoot Location Validator</h2>
+            <p>Submit a recommended park or scenic spot for a future figure shoot with JavaScript validation.</p>
+            <form class="app-form" onsubmit="return validateLocationForm(event)">
+                <input type="text" id="scout-name" placeholder="Your Name or Handle">
+                <input type="text" id="scout-email" placeholder="Your Email Address">
+                <input type="text" id="spot-name" placeholder="Recommended Outdoor Spot">
+                <button type="submit" class="app-btn">Validate &amp; Submit Spot</button>
+                <div id="form-result" class="app-result"></div>
+            </form>
+        </section>
+
+        <footer>
+            <div class="footer-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="applications.html" class="nav-link">Applications</a>
+                <a href="mailto:Shane.Rawlins14@login.cuny.edu" class="nav-link">Contact Email</a>
+            </div>
+            <p>&copy; 2026 LittleBotsBigplanet. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        const toggleBtn = document.getElementById('theme-toggle');
+        toggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('decepticon-mode');
+            toggleBtn.textContent = document.body.classList.contains('decepticon-mode')
+                ? 'Autobot Mode 🛡️' : 'Decepticon Mode 👾';
+        });
+
+        function calculateExpoTrip() {
+            const rate = parseFloat(document.getElementById('ticket-type').value);
+            const days = parseInt(document.getElementById('expo-days').value, 10) || 1;
+            const qty = parseInt(document.getElementById('ticket-qty').value, 10) || 1;
+            const miles = parseFloat(document.getElementById('trip-miles').value) || 0;
+            const mpg = parseFloat(document.getElementById('car-mpg').value) || 25;
+
+            let ticketCost = rate * days * qty;
+            let discountNote = '';
+            if (days >= 3) {
+                ticketCost *= 0.85;
+                discountNote = ' (15% multi-day discount applied!)';
+            }
+            const travelCost = (miles / mpg) * 3.40;
+            const grandTotal = ticketCost + travelCost;
+
+            document.getElementById('ticket-result').innerHTML =
+                `Passes (${days} day(s) × ${qty}): $${ticketCost.toFixed(2)}${discountNote}<br>` +
+                `Est. Round-Trip Fuel (${miles} mi): $${travelCost.toFixed(2)}<br>` +
+                `Total Convention Budget: $${grandTotal.toFixed(2)}`;
+        }
+
+        function calculateMPG() {
+            const miles = parseFloat(document.getElementById('miles').value);
+            const gallons = parseFloat(document.getElementById('gallons').value);
+            const out = document.getElementById('mpg-result');
+            if (!miles || !gallons || gallons <= 0) {
+                out.textContent = 'Please enter valid positive numbers.';
+                return;
+            }
+            out.textContent = 'Expedition Fuel Efficiency: ' + (miles / gallons).toFixed(2) + ' MPG';
+        }
+
+        function validateLocationForm(e) {
+            e.preventDefault();
+            const name = document.getElementById('scout-name').value.trim();
+            const email = document.getElementById('scout-email').value.trim();
+            const spot = document.getElementById('spot-name').value.trim();
+            const out = document.getElementById('form-result');
+
+            if (name.length < 2) { out.textContent = 'Error: Enter at least 2 characters for your name.'; return false; }
+            if (!email.includes('@') || !email.includes('.')) { out.textContent = 'Error: Enter a valid email.'; return false; }
+            if (spot.length < 3) { out.textContent = 'Error: Enter a valid outdoor location.'; return false; }
+            out.textContent = `Success! "${spot}" logged by Scout ${name}.`;
+            return true;
+        }
+    </script>
+</body>
+</html>
 
