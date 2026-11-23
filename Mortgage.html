@@ -1,35 +1,102 @@
-function calculateMortgage() {
-    // 1. Get input values
-    const loanAmount = parseFloat(document.getElementById('loan-amount').value);
-    const annualRate = parseFloat(document.getElementById('interest-rate').value);
-    const loanYears = parseInt(document.getElementById('loan-term').value, 10);
-    const resultBox = document.getElementById('mortgage-result');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mortgage Calculator | LittleBotsBigplanet</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .calc-box {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-width: 440px;
+            margin-top: 15px;
+        }
+        .calc-box label { font-weight: 600; font-size: 0.92rem; }
+        .calc-box input {
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #93c5fd;
+            font-size: 0.95rem;
+        }
+        .calc-btn {
+            background-color: #1d4ed8;
+            color: #ffffff;
+            border: none;
+            padding: 11px 16px;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 6px;
+        }
+        body.decepticon-mode .calc-btn { background-color: #7e22ce; }
+        .calc-result {
+            margin-top: 14px;
+            font-weight: bold;
+            color: #1d4ed8;
+            line-height: 1.6;
+        }
+        body.decepticon-mode .calc-result { color: #d8b4fe; }
+    </style>
+</head>
+<body>
 
-    // 2. Validate inputs
-    if (isNaN(loanAmount) || loanAmount <= 0 || isNaN(annualRate) || annualRate < 0 || isNaN(loanYears) || loanYears <= 0) {
-        resultBox.textContent = 'Please enter valid positive numbers for all fields.';
-        return;
-    }
+    <nav class="navbar">
+        <div class="nav-brand">LittleBotsBigplanet</div>
+        <ul class="nav-menu">
+            <li><a href="index.html" class="menu-link">Home</a></li>
+            <li><a href="about.html" class="menu-link">About</a></li>
+            <li><a href="applications.html" class="menu-link">Applications</a></li>
+            <li><a href="mortgage.html" class="menu-link">Mortgage Calc</a></li>
+            <li><a href="contact.html" class="menu-link">Contact</a></li>
+            <li><button id="theme-toggle" class="toggle-btn">Decepticon Mode 👾</button></li>
+        </ul>
+    </nav>
 
-    // 3. Convert annual rate and years to monthly values
-    const monthlyRate = (annualRate / 100) / 12;
-    const totalPayments = loanYears * 12;
-    let monthlyPayment = 0;
+    <div class="container">
+        <header>
+            <h1>Mortgage Payment Calculator</h1>
+            <p>Calculate monthly principal and interest payments using external JavaScript.</p>
+        </header>
 
-    // 4. Compute monthly payment
-    if (monthlyRate === 0) {
-        monthlyPayment = loanAmount / totalPayments;
-    } else {
-        const factor = Math.pow(1 + monthlyRate, totalPayments);
-        monthlyPayment = (loanAmount * monthlyRate * factor) / (factor - 1);
-    }
+        <section>
+            <h2>Loan Details</h2>
+            <div class="calc-box">
+                <label for="loan-amount">Loan Amount ($)</label>
+                <input type="number" id="loan-amount" placeholder="e.g., 250000" value="250000">
 
-    const totalPaid = monthlyPayment * totalPayments;
-    const totalInterest = totalPaid - loanAmount;
+                <label for="interest-rate">Annual Interest Rate (%)</label>
+                <input type="number" id="interest-rate" step="0.01" placeholder="e.g., 6.5" value="6.5">
 
-    // 5. Display formatted output
-    resultBox.innerHTML =
-        `Estimated Monthly Payment: $${monthlyPayment.toFixed(2)}<br>` +
-        `Total Interest Paid: $${totalInterest.toFixed(2)}<br>` +
-        `Total Loan Cost: $${totalPaid.toFixed(2)}`;
-}
+                <label for="loan-term">Loan Term (Years)</label>
+                <input type="number" id="loan-term" placeholder="e.g., 30" value="30">
+
+                <button class="calc-btn" onclick="calculateMortgage()">Calculate Monthly Payment</button>
+                <div id="mortgage-result" class="calc-result"></div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="applications.html" class="nav-link">Applications</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <p>&copy; 2026 LittleBotsBigplanet. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <!-- External JavaScript File Connection -->
+    <script src="mortgage.js"></script>
+    <script>
+        const toggleBtn = document.getElementById('theme-toggle');
+        toggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('decepticon-mode');
+            toggleBtn.textContent = document.body.classList.contains('decepticon-mode')
+                ? 'Autobot Mode 🛡️' : 'Decepticon Mode 👾';
+        });
+    </script>
+</body>
+</html>
+
