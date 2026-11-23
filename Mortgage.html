@@ -1,0 +1,35 @@
+function calculateMortgage() {
+    // 1. Get input values
+    const loanAmount = parseFloat(document.getElementById('loan-amount').value);
+    const annualRate = parseFloat(document.getElementById('interest-rate').value);
+    const loanYears = parseInt(document.getElementById('loan-term').value, 10);
+    const resultBox = document.getElementById('mortgage-result');
+
+    // 2. Validate inputs
+    if (isNaN(loanAmount) || loanAmount <= 0 || isNaN(annualRate) || annualRate < 0 || isNaN(loanYears) || loanYears <= 0) {
+        resultBox.textContent = 'Please enter valid positive numbers for all fields.';
+        return;
+    }
+
+    // 3. Convert annual rate and years to monthly values
+    const monthlyRate = (annualRate / 100) / 12;
+    const totalPayments = loanYears * 12;
+    let monthlyPayment = 0;
+
+    // 4. Compute monthly payment
+    if (monthlyRate === 0) {
+        monthlyPayment = loanAmount / totalPayments;
+    } else {
+        const factor = Math.pow(1 + monthlyRate, totalPayments);
+        monthlyPayment = (loanAmount * monthlyRate * factor) / (factor - 1);
+    }
+
+    const totalPaid = monthlyPayment * totalPayments;
+    const totalInterest = totalPaid - loanAmount;
+
+    // 5. Display formatted output
+    resultBox.innerHTML =
+        `Estimated Monthly Payment: $${monthlyPayment.toFixed(2)}<br>` +
+        `Total Interest Paid: $${totalInterest.toFixed(2)}<br>` +
+        `Total Loan Cost: $${totalPaid.toFixed(2)}`;
+}
