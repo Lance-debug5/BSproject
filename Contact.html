@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | LittleBotsBigplanet</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-width: 480px;
+            margin-top: 15px;
+        }
+        .contact-form input, .contact-form textarea {
+            padding: 11px;
+            border-radius: 6px;
+            border: 1px solid #93c5fd;
+            font-family: inherit;
+            font-size: 0.95rem;
+        }
+        .contact-btn {
+            background-color: #1d4ed8;
+            color: #ffffff;
+            border: none;
+            padding: 11px 18px;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        body.decepticon-mode .contact-btn { background-color: #7e22ce; }
+        .contact-status {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #1d4ed8;
+        }
+        body.decepticon-mode .contact-status { color: #d8b4fe; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-brand">LittleBotsBigplanet</div>
+        <ul class="nav-menu">
+            <li><a href="index.html" class="menu-link">Home</a></li>
+            <li><a href="about.html" class="menu-link">About</a></li>
+            <li><a href="index.html#figure-gallery" class="menu-link">Figure Gallery</a></li>
+            <li><a href="applications.html" class="menu-link">Applications</a></li>
+            <li><a href="contact.html" class="menu-link">Contact</a></li>
+            <li><button id="theme-toggle" class="toggle-btn">Decepticon Mode 👾</button></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>Contact &amp; Collab</h1>
+            <p>Have a question about a figure shoot, outdoor spot, or web project? Reach out below.</p>
+        </header>
+
+        <section>
+            <h2>Direct Info</h2>
+            <p><strong>Email:</strong> <a href="mailto:Shane.Rawlins14@login.cuny.edu" class="nav-link">Shane.Rawlins14@login.cuny.edu</a></p>
+            <p><strong>GitHub:</strong> <a href="https://github.com" target="_blank" class="nav-link">github.com</a></p>
+        </section>
+
+        <section>
+            <h2>Send a Message</h2>
+            <form class="contact-form" onsubmit="return handleContact(event)">
+                <input type="text" id="sender-name" placeholder="Your Name" required>
+                <input type="email" id="sender-email" placeholder="Your Email" required>
+                <textarea id="sender-msg" rows="4" placeholder="Your message or figure shoot idea..." required></textarea>
+                <button type="submit" class="contact-btn">Send Transmission</button>
+                <div id="contact-status" class="contact-status"></div>
+            </form>
+        </section>
+
+        <footer>
+            <div class="footer-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="applications.html" class="nav-link">Applications</a>
+            </div>
+            <p>&copy; 2026 LittleBotsBigplanet. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        const toggleBtn = document.getElementById('theme-toggle');
+        toggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('decepticon-mode');
+            toggleBtn.textContent = document.body.classList.contains('decepticon-mode')
+                ? 'Autobot Mode 🛡️' : 'Decepticon Mode 👾';
+        });
+
+        function handleContact(e) {
+            e.preventDefault();
+            const name = document.getElementById('sender-name').value.trim();
+            document.getElementById('contact-status').textContent =
+                'Thanks, ' + name + '! Your message has been logged for LittleBotsBigplanet.';
+            e.target.reset();
+            return true;
+        }
+    </script>
+</body>
+</html>
