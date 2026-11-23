@@ -6,37 +6,12 @@
     <title>Mortgage Calculator | LittleBotsBigplanet</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        .calc-box {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            max-width: 440px;
-            margin-top: 15px;
-        }
+        .calc-box { display: flex; flex-direction: column; gap: 12px; max-width: 440px; margin-top: 15px; }
         .calc-box label { font-weight: 600; font-size: 0.92rem; }
-        .calc-box input {
-            padding: 10px;
-            border-radius: 6px;
-            border: 1px solid #93c5fd;
-            font-size: 0.95rem;
-        }
-        .calc-btn {
-            background-color: #1d4ed8;
-            color: #ffffff;
-            border: none;
-            padding: 11px 16px;
-            border-radius: 6px;
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: 6px;
-        }
+        .calc-box input { padding: 10px; border-radius: 6px; border: 1px solid #93c5fd; font-size: 0.95rem; }
+        .calc-btn { background-color: #1d4ed8; color: #fff; border: none; padding: 11px 16px; border-radius: 6px; font-weight: bold; cursor: pointer; margin-top: 6px; }
         body.decepticon-mode .calc-btn { background-color: #7e22ce; }
-        .calc-result {
-            margin-top: 14px;
-            font-weight: bold;
-            color: #1d4ed8;
-            line-height: 1.6;
-        }
+        .calc-result { margin-top: 14px; font-weight: bold; color: #1d4ed8; line-height: 1.6; }
         body.decepticon-mode .calc-result { color: #d8b4fe; }
     </style>
 </head>
@@ -87,7 +62,6 @@
         </footer>
     </div>
 
-    <!-- External JavaScript File Connection -->
     <script src="mortgage.js"></script>
     <script>
         const toggleBtn = document.getElementById('theme-toggle');
@@ -99,4 +73,3 @@
     </script>
 </body>
 </html>
-
